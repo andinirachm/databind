@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="id.alo.sampledatabinding.model.SearchItem" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <ImageView
+            android:id="@+id/image_view_cover"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/darker_gray"
+            android:scaleType="centerCrop"
+            bind:image="@{item.image}" />
+
+        <TextView
+            android:id="@+id/text_view_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/image_view_cover"
+            android:text="@{item.title}"
+            android:textColor="#3670d2"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/text_view_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_title"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/image_view_cover"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{item.shortContent}"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</layout>

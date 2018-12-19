@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="presenter"
+            type="id.alo.sampledatabinding.presenter.LoginPresenter" />
+        <variable
+            name="user"
+            type="id.alo.sampledatabinding.model.loginrequest.LoginRequest" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        tools:context=".ui.LoginActivity">
+
+        <EditText
+            android:id="@+id/edit_text_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:text="@{user.email}"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edit_text_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:hint="Password"
+            android:text="@{user.password}"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimary"
+            android:text="LOGIN"
+            android:onClick="@{() -> presenter.login(user)}"
+            android:textColor="@android:color/white"
+            android:textSize="15dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

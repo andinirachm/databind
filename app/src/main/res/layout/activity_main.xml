@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="id.alo.sampledatabinding.presenter.SearchPresenter" />
+
+        <variable
+            name="search"
+            type="id.alo.sampledatabinding.model.SearchRequest" />
+    </data>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_text_keyword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text=""
+                android:hint="Search here"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_text_keyword"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/colorPrimary"
+                android:text="Search"
+                android:textColor="@android:color/white" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn" />
+
+        </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</layout>
